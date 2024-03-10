@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import { useState } from "react";
 import PlaceholderImage from "./assets/images/background-image.png";
 import * as ImagePicker from "expo-image-picker";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import ImageViewer from "./components/ImageViewer";
 import IconButton from "./components/IconButton";
@@ -49,7 +50,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer
           selectedImage={selectedImage}
@@ -88,7 +89,7 @@ export default function App() {
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
       <StatusBar style="auto" />
-    </View>
+    </GestureHandlerRootView>
   );
 }
 
